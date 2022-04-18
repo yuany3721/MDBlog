@@ -36,12 +36,13 @@ def index():
     return render_template("index.html", **{"meta_data": get_meta_by_page(md_info.md_meta, page), "pagination": pagination, "title": app.config["TITLE"], "slogan": "slogan"})
 
 
-@app.route("/blog/<title>")
-def blog(title):
-    with open(title, "r", encoding="utf-8") as fp:
+@app.route("/blog")
+def blog():
+    id = request.args.get("id", type=str)
+    with open(md_info.md_meta[id]["path"], "r", encoding="utf-8") as fp:
         content = fp.read()
     html = mdtex2html.convert(content)
-    return render_template("blog.html", **{"html": html, "meta": md_info.md_meta[title], "title": md_info.md_meta[title]["title"], "slogan": md_info.md_meta[title]["title"]})
+    return render_template("blog.html", **{"html": html, "meta": md_info.md_meta[id], "title": md_info.md_meta[id]["title"], "slogan": md_info.md_meta[id]["title"]})
 
 
 @app.route("/tag")

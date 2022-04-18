@@ -4,7 +4,7 @@
         <span class="panel-category">
             <a href="{{ url_for('category_view', name=data.category, sort=True) }}">{{data.category}}</a>
         </span>
-        <span class="panel-title">{{data.title}}</span>
+        <span class="panel-title"><a href="/blog?id={{key}}">{{data.title}}</a></span>
     </div>
     <hr>
     <div class="panel-main">{{data.summary}}</div>
@@ -12,7 +12,7 @@
     <hr>
     <div class="panel-meta">
         <div class="panel-mata-right">
-            <a class="panel-detail" href="{{ url_for('blog', title=key)}}">
+            <a class="panel-detail" href="/blog?id={{key}}">
                 <svg t="1649667198599" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3794" width="16" height="16"><path d="M512 74.666667C270.933333 74.666667 74.666667 270.933333 74.666667 512S270.933333 949.333333 512 949.333333 949.333333 753.066667 949.333333 512 753.066667 74.666667 512 74.666667z m0 810.666666c-204.8 0-373.333333-168.533333-373.333333-373.333333S307.2 138.666667 512 138.666667 885.333333 307.2 885.333333 512 716.8 885.333333 512 885.333333z" p-id="3795"></path><path d="M512 512m-42.666667 0a42.666667 42.666667 0 1 0 85.333334 0 42.666667 42.666667 0 1 0-85.333334 0Z" p-id="3796"></path><path d="M341.333333 512m-42.666666 0a42.666667 42.666667 0 1 0 85.333333 0 42.666667 42.666667 0 1 0-85.333333 0Z" p-id="3797"></path><path d="M682.666667 512m-42.666667 0a42.666667 42.666667 0 1 0 85.333333 0 42.666667 42.666667 0 1 0-85.333333 0Z" p-id="3798"></path></svg>                阅读全文
             </a>
             <span class="panel-date">
