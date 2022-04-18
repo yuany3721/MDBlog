@@ -1,0 +1,15 @@
+{% macro header(slogan) -%}
+<header>
+    <div class="nav">
+        <span class="nav-title"><a href="{{ url_for('index') }}">MDBlog</a></span>
+        <!-- <span class="nav-item"><a href="https://yuany3721.top">Home</a></span> -->
+        <span class="nav-item"><a href="{{ url_for('tag') }}">Tag</a></span>
+        <span class="nav-item"><a href="{{ url_for('category') }}">Category</a></span>
+    </div>
+    <div class="banner">
+        <div class="slogan">{{slogan}}</div>
+        <div class="overlay"></div>
+        <div class="banner-pic"> </div>
+    </div>
+</header>
+{%- endmacro %}

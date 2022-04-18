@@ -1,0 +1,10 @@
+{% macro page(data, url) -%}
+<div class="pagination">
+    {% if data.has_prev %}
+    <a href="{{url}}?page={{ data.prev_num }}">上一页</a> {% endif %} {% for i in data.iter_pages() %} {% if i == None%}
+    <a class="pagination-dots">...</a> {% elif data.page == i%}
+    <a class="pagination-active">{{ i }}</a> {% else %}
+    <a href="{{url}}?page={{ i }}">{{ i }}</a> {% endif %} {% endfor %} {% if data.has_next %}
+    <a href="{{url}}?page={{ data.next_num }}">下一页</a> {% endif %}
+</div>
+{%- endmacro %}

@@ -2,9 +2,7 @@
 
 import time
 import threading
-from turtle import Turtle
 from typing import Tuple
-from hamcrest import instance_of
 from watchdog.observers import Observer
 from watchdog.events import *
 from watchdog.utils.dirsnapshot import DirectorySnapshot, DirectorySnapshotDiff
@@ -47,18 +45,6 @@ class FileEventHandler(FileSystemEventHandler):
                     self.info_observer.add_info(file[1])
             else:
                 self.info_observer.renew_file(file)
-
-        # self.info_observer.renew_files(files)
-        # print(file)
-
-        # print("files_created:", diff.files_created)
-        # print("files_deleted:", diff.files_deleted)
-        # print("files_modified:", diff.files_modified)
-        # print("files_moved:", diff.files_moved)
-        # print("dirs_modified:", diff.dirs_modified)
-        # print("dirs_moved:", diff.dirs_moved)
-        # print("dirs_deleted:", diff.dirs_deleted)
-        # print("dirs_created:", diff.dirs_created)
 
 
 class DirMonitor(object):

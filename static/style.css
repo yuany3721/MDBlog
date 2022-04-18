@@ -37,6 +37,7 @@ a {
     position: relative;
     float: left;
     left: 10%;
+    margin: 20px;
     font-size: x-large;
 }
 
@@ -47,6 +48,15 @@ a {
     margin: 20px;
     font-size: large;
     font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .nav-item {
+        right: 5% !important;
+    }
+    .nav-title {
+        left: 5%;
+    }
 }
 
 .overlay {
@@ -118,6 +128,11 @@ a {
     margin: 5px;
 }
 
+.panel-meta-left,
+.panel-meta-right {
+    display: flex;
+}
+
 hr {
     border: none;
     height: 1px;
@@ -150,14 +165,24 @@ svg {
 .panel-author,
 .panel-date,
 .panel-detail {
-    position: relative;
     float: right;
+}
+
+@media (max-width: 992px) {
+    .panel-author,
+    .panel-date {
+        display: none;
+    }
+    .upper2-tag {
+        display: none !important;
+    }
 }
 
 .panel-detail,
 .panel-tag,
 .panel-category {
     cursor: pointer;
+    display: inline-block;
 }
 
 .panel-detail:hover,
@@ -180,4 +205,49 @@ svg {
 
 .text {
     margin: 5px;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.pagination a {
+    padding: 5px 12px;
+    background: #fff;
+    color: #444;
+    display: inline-block;
+    margin: 5px 0 auto;
+}
+
+.pagination-active {
+    background: #00a2ff !important;
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.pagination-active:hover,
+.pagination-dots:hover {
+    cursor: default;
+}
+
+.tag-container {
+    text-align: center;
+}
+
+.tag-box,
+.category-box {
+    display: inline-block;
+    margin: 0.2rem 0.5rem;
+}
+
+.tag-box:hover,
+.category-box:hover {
+    cursor: pointer;
+    text-shadow: 0.5px 0.5px gray;
+}
+
+.category-box {
+    border: 1px solid royalblue;
+    border-radius: 0.2rem;
+    padding: 0.2rem;
 }

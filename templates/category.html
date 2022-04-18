@@ -19,11 +19,14 @@
 
     <div class="main">
         <div class="container">
-            <!-- panel -->
-            {% from "macro/panel.html" import panel %} {% for key in meta_data%} {{ panel(key, meta_data[key]) }} {% endfor %}
-
-            <!-- pagination -->
-            {% from "macro/pagination.html" import page %} {{ page(pagination,"/") }}
+            <div class="tag-container">
+                {% for cate in category %}
+                <span class="category-box" style="font-size: {{category[cate]}}rem;">
+                    <a href="{{ url_for('category_view', name=cate, sort=True) }}">
+                        {{cate}}
+                    </a>
+                </span> {% endfor %}
+            </div>
         </div>
 
     </div>

@@ -23,7 +23,7 @@
             {% from "macro/panel.html" import panel %} {% for key in meta_data%} {{ panel(key, meta_data[key]) }} {% endfor %}
 
             <!-- pagination -->
-            {% from "macro/pagination.html" import page %} {{ page(pagination,"/") }}
+            {% from "macro/pagination.html" import page %} {{ page(pagination,"/tag/" + title) }}
         </div>
 
     </div>

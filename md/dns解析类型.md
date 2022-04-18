@@ -1,9 +1,10 @@
----
-title: 'DNS解析类型'
-date: Mon, 30 Aug 2021 07:36:08 +0000
-draft: false
-tags: ['DNS', '计算机网络']
----
+<!--
+author: yuany3721
+date: 2021-08-30
+title: DNS解析类型
+tags: DNS
+summary: 
+-->
 
 1.  A（Address）记录 将域名指向 IP 地址（Ipv4）
 2.  MX（Mail Exchange）记录 邮件交换记录，用于电子邮件系统发邮件时根据收信人的地址后缀来定位邮件服务器
