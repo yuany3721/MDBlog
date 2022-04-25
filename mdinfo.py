@@ -99,6 +99,7 @@ class MDInfo:
         for i in self.md_meta.keys():
             if self.md_meta[i]["path"] == file_path:
                 id = i
+                del self.md_meta[i]
                 break
             else:
                 print("DELETE: finding " + file_path + " error")
