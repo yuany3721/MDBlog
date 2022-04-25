@@ -68,6 +68,7 @@ class MDInfo:
         try:
             meta_data = self.__read_meta(id, file_path)
         except:
+            print("READ: reading " + file_path + " meta error")
             return
         # 存入元数据数组
         self.md_meta[id] = meta_data
@@ -100,6 +101,7 @@ class MDInfo:
                 id = i
                 break
             else:
+                print("DELETE: finding " + file_path + " error")
                 return
         tags_to_remove = self.md_meta[id]["tags"]
         category_to_remove = self.md_meta[id]["category"]
