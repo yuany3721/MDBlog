@@ -41,7 +41,8 @@ def blog():
     id = request.args.get("id", type=str)
     with open(md_info.md_meta[id]["path"], "r", encoding="utf-8") as fp:
         content = fp.read()
-    html = mdtex2html.convert(content)
+    html = mdtex2html.convert(
+        content, extensions=["codehilite", "nl2br", "toc", "fenced_code", "abbr", "fenced_code", "tables"])
     return render_template("blog.html", **{"html": html, "meta": md_info.md_meta[id], "title": md_info.md_meta[id]["title"], "slogan": md_info.md_meta[id]["title"]})
 
 
