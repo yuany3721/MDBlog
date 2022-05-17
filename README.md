@@ -1,3 +1,8 @@
+
+> Archived 
+> Use Vuepress as superior substitution
+
+
 # MDBlog
 
 基于 Flask 和 markdown 文档的轻量级博客
